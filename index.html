@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Podaj datę startu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="2" class="header-cell"><strong>Podaj datę startu w formacie DD-MM:</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+    
+                <input type="text" id="dataInput" placeholder="np. 30-06">
+            </td>
+        </tr>
+        <tr>
+            <td><button id="okButton" class="btn-ok">OK</button></td>
+            <td><button class="btn-cancel" onclick="location.reload()">Anuluj</button></td>
+        </tr>
+    </table>
+
+    <div id="wyniki">
+        <p id="komunikat"></p>
+        <p id="komunikat24h"></p>
+        <p id="komunikat17h"></p>
+        <p id="komunikat15h"></p>
+        <p id="komunikat24h_2"></p>
+        <p id="komunikat17h_2"></p>
+        <p id="komunikat13h"></p>
+    </div>
+
+
+    <script src="flag.js"></script>
+
+</body>
+</html>

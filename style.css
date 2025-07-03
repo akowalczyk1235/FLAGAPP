@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-collapse: collapse;
+
+    
+    
+}
+
+table {
+    width: 500px;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    padding: 40px;
+    text-align: center;
+}
+
+td {
+    padding: 20px;
+}
+
+.header-cell {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-ok {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #7d7170;
+    color: white;
+}
+
+#wyniki {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#wyniki p {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+ 
+}
+#dataInput {
+    color: black;
+}
+
+#dataInput::placeholder {
+    color: darkgray;
+    opacity: 1;
+}
