@@ -27,6 +27,30 @@ document.getElementById('okButton').addEventListener('click', function () {
         return dzien + "." + miesiac;
     }
 
+    function formatujDoISO(date) {
+        return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2);
+    }
+
+    async function wyslijDoKalendarza(tytul, start, koniec) {
+        const webhookURL = "https://hook.eu1.make.com/mdjizitdhmvgiioqfsl64mj2hr5fqpjj"; 
+        
+        // Google Calendar traktuje datę końcową jako "do godziny 00:00 tego dnia"
+        // Więc żeby post 1-5 maja był widoczny cały 5 maja, musimy wysłać datę 6 maja
+        let dateEnd = new Date(koniec);
+        dateEnd.setDate(dateEnd.getDate() + 1);
+
+        try {
+            await fetch(webhookURL, {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: tytul,
+                    start: formatujDoISO(start),
+                    end: formatujDoISO(dateEnd)
+                })
+            });
+        } catch (e) { console.error("Błąd wysyłki", e); }
+    }
+
     if (!isNaN(dataStartu.getTime())) {
         var dataKoncowa = new Date(dataStartu);
         dataKoncowa.setDate(dataKoncowa.getDate() + 5);
