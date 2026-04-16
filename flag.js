@@ -33,6 +33,7 @@ document.getElementById('okButton').addEventListener('click', function () {
 
     async function wyslijDoKalendarza(tytul, start, koniec) {
         const webhookURL = "https://hook.eu1.make.com/mdjizitdhmvgiioqfsl64mj2hr5fqpjj"; 
+                        
         
         // Google Calendar traktuje datę końcową jako "do godziny 00:00 tego dnia"
         // Więc żeby post 1-5 maja był widoczny cały 5 maja, musimy wysłać datę 6 maja
