@@ -44,7 +44,6 @@ document.getElementById('okButton').addEventListener('click', function () {
             await fetch(webhookURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                mode: 'no-cors',
                 body: JSON.stringify({
                     title: tytul,
                     start: formatujDoISO(start),
