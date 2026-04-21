@@ -60,12 +60,14 @@ document.getElementById('okButton').addEventListener('click', function () {
         dataKoncowa15h.setDate(dataKoncowa15h.getDate() + 5);
         komunikatElement.textContent = "W dniach " + formatujDate(dataStartu) + " - " + formatujDate(dataKoncowa15h) + " pościsz 15h";
         wyslijDoKalendarza("15h", dataStartu, dataKoncowa15h);
+        await pauza(2000);
 
         // 2. Etap 24h
         var data24h = new Date(dataStartu);
         data24h.setDate(data24h.getDate() + 6);
         komunikat24hElement.textContent = "W dniu " + formatujDate(data24h) + " pościsz 24h";
         wyslijDoKalendarza("24h", data24h, data24h);
+        await pauza(2000);
         
         // 3. Etap 17h
         var dataPoczatek17h = new Date(dataStartu);
@@ -74,6 +76,7 @@ document.getElementById('okButton').addEventListener('click', function () {
         dataKoniec17h.setDate(dataKoniec17h.getDate() + 9);
         komunikat17hElement.textContent = "W dniach " + formatujDate(dataPoczatek17h) + " do " + formatujDate(dataKoniec17h) + " pościsz 17h";
         wyslijDoKalendarza("17h", dataPoczatek17h, dataKoniec17h);
+        await pauza(2000);
 
         // 4. Drugi etap 15h
         var dataPoczatek15h_2 = new Date(dataStartu);
@@ -82,12 +85,14 @@ document.getElementById('okButton').addEventListener('click', function () {
         dataKoniec15h_2.setDate(dataKoniec15h_2.getDate() + 15);
         komunikat15hElement.textContent = "W dniach " + formatujDate(dataPoczatek15h_2) + " do " + formatujDate(dataKoniec15h_2) + " pościsz 15h";
         wyslijDoKalendarza("15h", dataPoczatek15h_2, dataKoniec15h_2);
+        await pauza(2000);
 
         // 5. Drugi etap 24h
         var data24h_2 = new Date(dataStartu);
         data24h_2.setDate(data24h_2.getDate() + 16);
         komunikat24hElement2.textContent = "W dniu " + formatujDate(data24h_2) + " pościsz 24h";
         wyslijDoKalendarza("24h", data24h_2, data24h_2);
+        await pauza(2000);
 
         // 6. Drugi etap 17h (Tutaj był błąd w nazwie zmiennej - JUŻ POPRAWIONE)
         var dataPoczatek17h_2 = new Date(dataStartu);
@@ -96,6 +101,7 @@ document.getElementById('okButton').addEventListener('click', function () {
         dataKoniec17h_2.setDate(dataKoniec17h_2.getDate() + 19);
         komunikat17hElement2.textContent = "W dniach " + formatujDate(dataPoczatek17h_2) + " do " + formatujDate(dataKoniec17h_2) + " pościsz 17h";
         wyslijDoKalendarza("17h", dataPoczatek17h_2, dataKoniec17h_2);
+        await pauza(2000);
 
         // 7. Etap 13h
         var dataPoczatek13h = new Date(dataStartu);
