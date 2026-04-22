@@ -1,4 +1,4 @@
-// 1. Pomocnicze funkcje formatowania (na zewnątrz, by nie zaśmiecać)
+// 1. Pomocnicze funkcje formatowania
 function formatujDate(date) {
     var d = ("0" + date.getDate()).slice(-2);
     var m = ("0" + (date.getMonth() + 1)).slice(-2);
@@ -19,7 +19,7 @@ async function wyslijDoKalendarza(tytul, start, koniec) {
     dateEnd.setDate(dateEnd.getDate() + 1);
 
     try {
-        const response = await fetch(webhookURL, {
+        await fetch(webhookURL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -28,13 +28,13 @@ async function wyslijDoKalendarza(tytul, start, koniec) {
                 end: formatujDoISO(dateEnd)
             })
         });
-        console.log("Sukces wysyłki dla: " + tytul);
+        console.log("Wysłano: " + tytul);
     } catch (e) { 
-        console.error("Błąd wysyłki dla " + tytul, e); 
+        console.error("Błąd wysyłki: " + tytul, e); 
     }
 }
 
-// 3. Obsługa przycisku
+// 3. Obsługa przycisku - TUTAJ DODAŁEM "async" przed function
 document.getElementById('okButton').addEventListener('click', async function () {
     var dataStartuStr = document.getElementById('dataInput').value;
     if (!dataStartuStr) return;
